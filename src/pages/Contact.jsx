@@ -215,11 +215,17 @@ export default function Contact() {
               />
             </FormField>
 
+            {loading && (
+              <p className="text-muted text-sm mb-4">
+                Please wait — the server may take up to a minute to wake up on the first try.
+              </p>
+            )}
+
             <Button type="submit" size="lg" disabled={loading} className="w-full sm:w-auto">
               {loading ? (
                 <span className="flex items-center gap-2">
                   <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Sending...
+                  Sending message...
                 </span>
               ) : (
                 <>
